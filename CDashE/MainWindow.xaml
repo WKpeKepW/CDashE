@@ -1,0 +1,17 @@
+﻿<Window x:Class="CDashE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CDashE"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="294" Width="824" MaxWidth="824" MaxHeight="294" MinHeight="294" MinWidth="824">
+    <Grid>
+        <TextBox x:Name="TForemotic" Margin="10,10,504,10" Background="{x:Null}" />
+        <TextBox x:Name="TForemoticBuff"  Margin="504,10,10,10" Background="{x:Null}" />
+        <Button x:Name="Bresult" Content="Перевести" Margin="0,0,0,0" FontSize="24" Click="Bresult_Click" MaxWidth="325" Width="156" Background="{x:Null}" Height="36"/>
+        <Button x:Name="Past" Content="Вставить"  Margin="0,0,100,200" Width="87" Background="{x:Null}" Height="29" Click="Past_Click"/>
+        <Button x:Name="Copy" Content="Скопировать"  Margin="100,200,0,0" Width="87" Background="{x:Null}" Height="29" Click="Copy_Click"/>
+        <Button x:Name="ChangeConfig" Content="Изменить конфиг"  Margin="0,80,0,0"  Width="116" Background="{x:Null}" Height="19" Click="ChangeConfig_Click"/>
+    </Grid>
+</Window>
