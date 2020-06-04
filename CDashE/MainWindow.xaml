@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CDashE"
         mc:Ignorable="d"
-        Title="MainWindow" Height="294" Width="824" MaxWidth="824" MaxHeight="294" MinHeight="294" MinWidth="824">
+        Title="CDashE" Height="294" Width="824" MaxWidth="824" MaxHeight="294" MinHeight="294" MinWidth="824" Icon="/Love.png">
     <Grid>
         <TextBox x:Name="TForemotic" Margin="10,10,504,10" Background="{x:Null}" />
         <TextBox x:Name="TForemoticBuff"  Margin="504,10,10,10" Background="{x:Null}" />

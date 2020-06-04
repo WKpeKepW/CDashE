@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Reflection;
-using System.Security.Policy;
-using System.Text;
-using System.Windows.Controls;
+using System.Windows;
 
 namespace CDashE
 {
@@ -16,25 +12,41 @@ namespace CDashE
         static Dictionary<string, string> Emotic;
         static void InitializeEmotic()//сделать конфиг для смайликов
         {
+            StreamReader sr;
+            string T = "у вас нет конфига";
             var E = new Dictionary<string, string>();
-            StreamReader sr = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "\\Emotic.txt");
-            string T = sr.ReadToEnd();
-            sr.Close();
+            try
+            {
+                sr = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "\\Emotic.txt");
+                T = sr.ReadToEnd();
+                sr.Close();
+            }
+            catch (Exception)
+            {
+                File.Create(AppDomain.CurrentDomain.BaseDirectory + "\\Emotic.txt");
+            }
             string[] buff = T.Split(';');
             for (int i = 0; i < buff.Length; i++)
             {
                 string tex = buff[i];
                 for (int l = 0; l < tex.Length; l++)
                 {
-                    if (tex[l] == '|')
-                        E.Add(tex.Remove(l), tex.Remove(0, l+1));
+                    try
+                    {
+                        if (tex[l] == '|')
+                            E.Add(tex.Remove(l), tex.Remove(0, l + 1));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Первый смайлик не может повторяться", "Ошибка");
+                    }
                 }
             }
             Emotic = E;
         }
-        public static string ReturnEmotic(TextBox text)//ну нас будет один метод статичный в который и послыаеться тексбокс в статичный класс
+        public static string ReturnEmotic(string text)//ну нас будет один метод статичный в который и послыаеться тексбокс в статичный класс
         {
-            Text = text.Text;
+            Text = text;
             InitializeEmotic();
             ReturnFormatText();
             return SearchEmotic();

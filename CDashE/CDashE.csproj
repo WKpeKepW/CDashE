@@ -4,10 +4,19 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Ico.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Love.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="bin\Debug\netcoreapp3.1\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Love.png" />
   </ItemGroup>
 
 </Project>
